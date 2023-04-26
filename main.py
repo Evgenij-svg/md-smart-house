@@ -259,7 +259,8 @@ while True:
         else:
             print("Ошибка при отправке данных на ESP32")
 
-    cv2.imshow("Video", RGB_image)
+    BGR_image = cv2.cvtColor(RGB_image, cv2.COLOR_RGB2BGR)    
+    cv2.imshow("Video",  BGR_image)
     if cv2.waitKey(13) & 0xFF == ord('q'):
         break
 
